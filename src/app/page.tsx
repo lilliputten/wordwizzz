@@ -1,3 +1,7 @@
+/**
+ * @changed 2024.08.03, 00:03
+ */
+
 import Image from 'next/image';
 import classNames from 'classnames';
 

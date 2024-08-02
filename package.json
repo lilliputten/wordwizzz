@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "timetag": "240802-2021",
   "timestamp": "2024.08.02 20:21 +0300",
-  "changed": "2024.08.02, 23:56",
+  "changed": "2024.08.03, 00:05",
   "private": false,
   "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
   "lint-staged": {
@@ -69,6 +69,7 @@
     "typescript-eslint": "8.0.0"
   },
   "scripts": {
+    "prepare": "echo --Install git hooks-- && npx simple-git-hooks",
     "compile-assets-gulp": "echo --Update all assets /gulp/-- && gulp compileAssets",
     "watch-assets-gulp": "echo --Watch all assets /gulp/-- && gulp watchAssets",
     "compile-assets": "echo --Update all assets /webpack/-- && webpack",
@@ -78,7 +79,6 @@
     "prod": "npm run build-prod && npm run serve",
     "build-UNUSED": "echo --Build project-- && eleventy --quiet && gulp build",
     "build-prod": "npm run clear-build && cross-env ELEVENTY_ENV=production npm run build",
-    "prepare": "npx simple-git-hooks",
     "prettier": "echo --Run prettier-- && prettier --write --cache . | grep -v '(cached)' || true",
     "stylelint": "echo --Lint styles-- && stylelint --allow-empty-input src/**/*.{css,scss,less}",
     "stylelint-fix": "echo --Lint styles-- && stylelint --allow-empty-input src/**/*.{css,scss,less} --fix",
@@ -86,7 +86,7 @@
     "check-editorconfig": "editorconfig-checker",
     "eslint": "echo --Lint sources-- && eslint src",
     "next-lint": "next lint",
-    "lint-all": "echo --Run all pre-commit check-ups-- && npm-run-all stylelint eslint type-check && echo --All check-ups passed--",
+    "lint": "echo --Run all pre-commit check-ups-- && npm-run-all stylelint eslint type-check && echo --All check-ups passed--",
     "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-editorconfig prettier lint-all && echo --All check-ups passed--",
     "clear-cache": "echo --Clear caches-- && rimraf node_modules/.cache && echo Cleared webpack cache",
     "dev": "echo --Start next dev server-- && next dev",
