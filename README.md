@@ -1,3 +1,17 @@
+<!--
+@since 2024.08.02, 20:19
+@changed 2024.08.02, 20:19
+-->
+
+# Personal 11ty-based portfolio site
+
+TODO: Describe workflow here.
+
+- Version: 0.0.0
+- Last changes timestamp: 2024.08.02 20:21 +0300
+
+TODO: Add the project description.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
