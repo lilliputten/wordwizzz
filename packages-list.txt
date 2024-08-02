@@ -21,4 +21,3 @@
 "typescript-eslint": "^7.5.0",
 
 @babel/eslint-parser cross-env dotenv editorconfig-checker eslint eslint-config-prettier eslint-plugin-import eslint-plugin-json eslint-plugin-jsonc eslint-plugin-prettier eslint-plugin-yaml npm-package-user-scripts-list npm-run-all prettier rimraf sass simple-git-hooks stylelint stylelint-config-recommended stylelint-config-recommended-scss typescript-eslint
-
