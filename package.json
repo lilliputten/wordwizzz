@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "timetag": "240802-2021",
   "timestamp": "2024.08.02 20:21 +0300",
-  "changed": "2024.08.03, 00:05",
+  "changed": "2024.08.04, 21:12",
   "private": false,
   "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
   "lint-staged": {
@@ -87,7 +87,7 @@
     "eslint": "echo --Lint sources-- && eslint src",
     "next-lint": "next lint",
     "lint": "echo --Run all pre-commit check-ups-- && npm-run-all stylelint eslint type-check && echo --All check-ups passed--",
-    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-editorconfig prettier lint-all && echo --All check-ups passed--",
+    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-editorconfig prettier lint && echo --All check-ups passed--",
     "clear-cache": "echo --Clear caches-- && rimraf node_modules/.cache && echo Cleared webpack cache",
     "dev": "echo --Start next dev server-- && next dev",
     "build": "echo --Build next project-- && next build",
