@@ -3,30 +3,56 @@
   "version": "0.0.0",
   "timetag": "240802-2021",
   "timestamp": "2024.08.02 20:21 +0300",
-  "changed": "2024.08.02, 20:10",
+  "changed": "2024.08.04, 21:12",
   "private": false,
   "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+  "lint-staged": {
+    "*": [
+      "editorconfig-checker"
+    ],
+    "src/scripts/**/*.{yml,yaml,json,jsonc,js,ts,jsx,tsx}": [
+      "eslint"
+    ],
+    "src/styles/**/*.{scss,sass,less,css}": [
+      "stylelint"
+    ]
+  },
+  "lint-staged-UNUSED": {},
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npm run lint"
+  },
   "dependencies": {
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
   },
+  "unusedDependencies": {
+    "eslint-deprectated": "Some of following packages are required typescript-eslint@7.2.0, wich is conflicting with typescript 5.x",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-config-next": "14.2.3",
+    "typescript-eslint@8.0.0-alpha.62": "This version is for eslint@9 (early bird)",
+    "typescript-eslint": "8.0.0-alpha.62",
+    "UNUSED": "There are listed all unused deps"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.1",
+    "@next/eslint-plugin-next": "^14.2.5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "classnames": "^2.5.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "editorconfig-checker": "^5.1.8",
     "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-json": "^4.0.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-yaml": "^1.0.3",
+    "lint-staged": "^15.2.7",
     "npm-package-user-scripts-list": "^0.1.10",
     "npm-run-all": "^4.1.5",
     "postcss": "^8",
@@ -37,14 +63,35 @@
     "stylelint": "^16.8.1",
     "stylelint-config-recommended": "^14.0.1",
     "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-tailwindcss": "^0.0.7",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
-    "typescript-eslint": "^8.0.0"
+    "typescript-eslint": "8.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "prepare": "echo --Install git hooks-- && npx simple-git-hooks",
+    "compile-assets-gulp": "echo --Update all assets /gulp/-- && gulp compileAssets",
+    "watch-assets-gulp": "echo --Watch all assets /gulp/-- && gulp watchAssets",
+    "compile-assets": "echo --Update all assets /webpack/-- && webpack",
+    "watch-assets": "echo --Watch all assets /webpack/-- && webpack --watch",
+    "start-UNUSED": "echo --Start dev server-- && cross-env ELEVENTY_ENV=development eleventy --serve --quiet",
+    "serve": "serve build",
+    "prod": "npm run build-prod && npm run serve",
+    "build-UNUSED": "echo --Build project-- && eleventy --quiet && gulp build",
+    "build-prod": "npm run clear-build && cross-env ELEVENTY_ENV=production npm run build",
+    "prettier": "echo --Run prettier-- && prettier --write --cache . | grep -v '(cached)' || true",
+    "stylelint": "echo --Lint styles-- && stylelint --allow-empty-input src/**/*.{css,scss,less}",
+    "stylelint-fix": "echo --Lint styles-- && stylelint --allow-empty-input src/**/*.{css,scss,less} --fix",
+    "type-check": "echo --Run typescript linter-- && tsc --pretty --noEmit",
+    "check-editorconfig": "editorconfig-checker",
+    "eslint": "echo --Lint sources-- && eslint src",
+    "next-lint": "next lint",
+    "lint": "echo --Run all pre-commit check-ups-- && npm-run-all stylelint eslint type-check && echo --All check-ups passed--",
+    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all check-editorconfig prettier lint && echo --All check-ups passed--",
+    "clear-cache": "echo --Clear caches-- && rimraf node_modules/.cache && echo Cleared webpack cache",
+    "dev": "echo --Start next dev server-- && next dev",
+    "build": "echo --Build next project-- && next build",
+    "start": "echo --Start built next project-- && next start",
+    "scripts-help": "echo --List all available script commands-- && npm-package-user-scripts-list"
   }
 }

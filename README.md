@@ -3,7 +3,7 @@
 @changed 2024.08.02, 20:19
 -->
 
-# Personal 11ty-based portfolio site
+# NextJS Auth application
 
 TODO: Describe workflow here.
 

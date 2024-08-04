@@ -1,3 +1,9 @@
+/*
+vim: ft=jsonc
+@desc Typescript compiler configuration
+@changed 2024.08.02, 23:51
+@see https://www.typescriptlang.org/it/tsconfig/
+*/
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -22,5 +28,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules*", "*_"]
 }
