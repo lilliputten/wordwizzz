@@ -1,4 +1,4 @@
-# @changed 2024.06.14, 14:03
+# @changed 2024.08.04, 22:05
 # @see https://eslint.org/docs/rules/
 root: true
 extends:
@@ -12,6 +12,7 @@ env:
   # amd: true
   commonjs: true
 rules:
+  curly: warn
   no-console: warn
   no-debugger: warn
   no-extra-semi: warn
@@ -51,6 +52,7 @@ overrides:
       - '@typescript-eslint'
       - 'prettier' # prettier: Slighly slower (+~0.3s)
     rules:
+      curly: warn
       no-undef: 'off' # Disable js no-undef rule for typescript sources. Using ts2304 instead.
       # eslint-comments/no-use: 'warn'
       no-debugger: 'warn'
