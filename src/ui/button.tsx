@@ -3,14 +3,13 @@ import classNames from 'classnames';
 
 import { TPropsWithChildrenAndClassName } from '@/core/types/generic';
 
-interface TButtonProps extends TPropsWithChildrenAndClassName {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
+type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & TPropsWithChildrenAndClassName;
 
 export function Button(props: TButtonProps) {
-  const { className, children, onClick } = props;
+  const { className, children, ...rest } = props;
   return (
     <button
+      {...rest}
       className={classNames(
         className,
         'bg-blue-500',
@@ -21,7 +20,6 @@ export function Button(props: TButtonProps) {
         'px-4',
         'rounded',
       )}
-      onClick={onClick}
     >
       {children}
     </button>
