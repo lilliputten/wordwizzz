@@ -12,6 +12,7 @@ export function Button(props: TButtonProps) {
       {...rest}
       className={classNames(
         className,
+        'flex',
         'bg-blue-500',
         'hover:bg-blue-700',
         'text-white',

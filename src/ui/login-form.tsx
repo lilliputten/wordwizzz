@@ -5,12 +5,12 @@ import { AtSymbolIcon, KeyIcon, ExclamationCircleIcon } from '@heroicons/react/2
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from '@/ui/button';
 import { useActionState } from 'react';
-import { authenticate } from '@/lib/actions';
 import classNames from 'classnames';
+
+import { authenticate } from '@/lib/actions';
 
 export function LoginForm() {
   const [errorMessage, formAction, isPending] = useActionState(authenticate, undefined);
-
   return (
     <form action={formAction} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
@@ -30,7 +30,7 @@ export function LoginForm() {
             </label>
             <div className="relative">
               <input
-                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500 text-gray-900"
                 id="email"
                 type="email"
                 name="email"
@@ -46,7 +46,7 @@ export function LoginForm() {
             </label>
             <div className="relative">
               <input
-                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500 text-gray-900"
                 id="password"
                 type="password"
                 name="password"

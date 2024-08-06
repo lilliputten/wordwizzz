@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    // // @see https://nextjs.org/learn/dashboard-app/partial-prerendering#implementing-partial-prerendering
-    // ppr: 'incremental',
+    // @see https://nextjs.org/learn/dashboard-app/partial-prerendering#implementing-partial-prerendering
+    ppr: 'incremental',
   },
 };
 

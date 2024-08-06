@@ -2,8 +2,6 @@ import NextAuth from 'next-auth';
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
-// import { sql } from '@vercel/postgres';
-// import type { User } from '@/lib/definitions';
 import bcrypt from 'bcrypt';
 
 import { getUser } from '@/lib/db';
@@ -33,8 +31,8 @@ export const { auth, signIn, signOut } = NextAuth({
             return user;
           }
         }
+        // eslint-disable-next-line no-console
         console.error('[auth:NextAuth:authorize] Invalid credentials');
-        debugger;
         return null;
       },
     }),
