@@ -1,5 +1,5 @@
 // ex: set ft=jsonc :
-// @changed 2024.03.15, 15:19
+// @changed 2024.08.05, 18:11
 {
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
@@ -7,6 +7,19 @@
   // https://code.visualstudio.com/docs/editor/debugging#_launch-configurations
   "version": "0.2.0",
   "configurations": [
+    {
+      "name": "next dev server",
+      "program": "${workspaceRoot}/node_modules/next/dist/bin/next",
+      "args": [
+        "dev"
+      ],
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      // "outputCapture" : "std",
+      // "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
     {
       "name": "Launch Chrome",
       "request": "launch",
