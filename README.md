@@ -1,6 +1,6 @@
 <!--
 @since 2024.08.02, 20:19
-@changed 2024.08.02, 20:19
+@changed 2024.08.06, 18:44
 -->
 
 # NextJS Auth application
@@ -13,6 +13,10 @@ TODO: Describe workflow here.
 TODO: Add the project description.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Deployment
+
+Vercel domain: nextjs-auth-app-beige.vercel.app
 
 ## Getting Started
 
