@@ -128,7 +128,7 @@ overrides:
             rendering:
               - '/^render.+$/'
               - 'render'
-      react/sort-prop-types: 'warn'
+      # react/sort-prop-types: 'warn'
       react/jsx-closing-tag-location: 'error'
       react/jsx-curly-newline: 'error'
       react/jsx-curly-spacing: 'error'

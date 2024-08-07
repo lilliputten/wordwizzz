@@ -1,11 +1,12 @@
 /**
- * @changed 2024.08.06, 15:42
+ * @changed 2024.08.06, 22:11
  */
 
-import { PowerIcon } from '@heroicons/react/24/outline';
+// import React from 'react';
 import classNames from 'classnames';
 
 import { signOut } from '@/auth';
+import { SignOutButton } from '@/ui/SignOutButton';
 
 // import { NextRubrics } from '@/components/nextPage/NextRubrics';
 // import { NextLogo } from '@/components/nextPage/NextLogo';
@@ -13,7 +14,22 @@ import { signOut } from '@/auth';
 
 // import styles from './test.module.scss';
 
+// export const dynamic = 'force-dynamic';
+
 export function SecurePage() {
+  // const [isLoggingOut, setLoggingOut] = React.useState(false);
+  // const { data: session, status } = useSession();
+  const signOutCallback = async () => {
+    'use server';
+    console.log('[SecurePage] Signing out (delay)');
+    // DEBUG: Emulate delay...
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    console.log('[SecurePage] Signing out');
+    await signOut({
+      // @see https://github.com/nextauthjs/next-auth/issues/4612#issuecomment-1138620953
+      // callbackUrl: '/api/auth/logout',
+    });
+  };
   return (
     <main
       className={classNames(
@@ -32,12 +48,15 @@ export function SecurePage() {
       <NextLogo />
       <NextRubrics />
       */}
-      <form
-        action={async () => {
-          'use server';
-          await signOut();
-        }}
-      >
+      <form action={signOutCallback}>
+        <SignOutButton />
+        {/*
+        <Suspense fallback={<>Button</>}>
+          <Button>
+            <PowerIcon className="w-6" />
+            <div className="hidden md:block">Sign Out</div>
+          </Button>
+        </Suspense>
         <button
           className={classNames(
             'flex',
@@ -62,6 +81,7 @@ export function SecurePage() {
           <PowerIcon className="w-6" />
           <div className="hidden md:block">Sign Out</div>
         </button>
+        */}
       </form>
     </main>
   );
