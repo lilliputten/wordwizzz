@@ -1,14 +1,49 @@
 'use client';
 
 import React from 'react';
+import { GetServerSideProps, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { PowerIcon } from '@heroicons/react/24/outline';
-import { useSession } from 'next-auth/react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+// import { getServerSession } from "next-auth/next";
 
 import { Button } from '@/ui/button';
 import { TPropsWithClassName } from '@/core/types/generic';
 
-export const SignOutButton: React.FC<TPropsWithClassName> = (props) => {
-  const { className } = props;
+type TSignOutButton = TPropsWithClassName;
+
+interface TServerSideProps {
+  test: number;
+}
+
+// export const getStaticProps: GetStaticProps<TServerSideProps> = async (_context) => {
+// /*
+//  * const session = await getServerSession(context.req, context.res, authOptions);
+//  * if (!session) {
+//  *   return {
+//  *     redirect: {
+//  *       destination: "/api/auth/signin",
+//  *       permanent: false,
+//  *     },
+//  *   };
+//  * }
+//  */
+//
+//   console.log('[SignOutButton:getServerSideProps');
+//   debugger;
+//
+//   return {
+//     props: {
+//       // user: session.user,
+//       test: 77,
+//     },
+//   };
+// };
+
+// export const SignOutButton: React.FC<TSignOutButton [> & TServerSideProps <]> = (props) => {
+export const SignOutButton: React.FC<
+  TSignOutButton /* & InferGetStaticPropsType<typeof getStaticProps> */
+> = (props) => {
+  const { className /* , test */ } = props;
   const [isLoggingOut, setLoggingOut] = React.useState(false);
   const session = useSession();
   const {
@@ -17,31 +52,35 @@ export const SignOutButton: React.FC<TPropsWithClassName> = (props) => {
     status,
     // update,
   } = session;
-  console.log('XXX', session.data);
-  // Effect: Check session
-  React.useEffect(() => {
-    console.log('[SignOutButton] Effect: Check session: before', {
-      session,
-    });
-    // NOTE: It causes infinity loop
-    if (!session.data) {
-      fetch('/api/auth/session?update')
-        .then((res) => res.json())
-        .then((data) => {
-          console.log('[SignOutButton] Effect: Check session: done', {
-            data,
-          });
-          debugger;
-          return session.update(data);
-        })
-        .catch((error) => {
-          console.error('[SignOutButton] Effect: Check session: error', {
-            error,
-          });
-          debugger;
-        });
-    }
-  }, [session]);
+  console.log('[SignOutButton:SignOutButton] DEBUG', {
+    'session.data': session.data,
+    // test,
+  });
+  /* // Effect: Check session
+   * React.useEffect(() => {
+   *   console.log('[SignOutButton] Effect: Check session: before', {
+   *     session,
+   *   });
+   *   // NOTE: It causes infinity loop
+   *   if (!session.data) {
+   *     fetch('/api/auth/session?update')
+   *       .then((res) => res.json())
+   *       .then((data) => {
+   *         console.log('[SignOutButton] Effect: Check session: done', {
+   *           data,
+   *         });
+   *         debugger;
+   *         return session.update(data);
+   *       })
+   *       .catch((error) => {
+   *         console.error('[SignOutButton] Effect: Check session: error', {
+   *           error,
+   *         });
+   *         debugger;
+   *       });
+   *   }
+   * }, [session]);
+   */
   // React.useLayoutEffect(() => {}, [isLoggingOut]);
   // Disable sign out button on click...
   const onButtonClick = React.useCallback(() => {
@@ -50,8 +89,11 @@ export const SignOutButton: React.FC<TPropsWithClassName> = (props) => {
     requestAnimationFrame(() => {
       setLoggingOut(true);
     });
+    // Alternative sign-out, on the client-side
+    signOut();
   }, []);
-  const hasSession = status === 'authenticated' && !isLoggingOut;
+  const hasSession = // status === 'authenticated' && // NOTE: Don't use information from the session due to Issue #8)
+    !isLoggingOut;
   // DEBUG: Show session state...
   React.useEffect(() => {
     console.log('[SignOutButton] Session', status, sessionData?.user?.email, sessionData);

@@ -1,5 +1,6 @@
 import type { NextAuthConfig } from 'next-auth';
-import GoogleProvider from 'next-auth/providers/google';
+// import GoogleProvider from 'next-auth/providers/google';
+import GitHubProvider from 'next-auth/providers/github';
 // import router from 'next/router';
 // import { useRouter } from 'next/navigation'
 
@@ -58,5 +59,9 @@ export const authConfig: NextAuthConfig = {
     //   clientId: process.env.GOOGLE_CLIENT_ID,
     //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     // }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
   ],
 } satisfies NextAuthConfig;

@@ -19,9 +19,10 @@ export function LoginForm() {
             // lusitana.className,
             'mb-3',
             'text-2xl',
+            'text-blue-400',
           )}
         >
-          Please log in to continue.
+          Please log in to continue
         </h1>
         <div className="w-full">
           <div>
