@@ -19,6 +19,8 @@ import { SignOutButton } from '@/ui/SignOutButton';
 
 export const SecurePage: React.FC = async () => {
   const session = await auth();
+  const user = session?.user;
+  const name = user?.name;
   console.log('[SecurePage] DEBUG', {
     session,
   });
@@ -41,11 +43,17 @@ export const SecurePage: React.FC = async () => {
         'min-h-screen',
         'flex-col',
         'items-center',
-        'justify-between',
+        'gap-6',
+        'justify-center',
+        // 'justify-between',
         'p-24',
       )}
     >
       <h1>Secure page</h1>
+      <h2>
+        {/* Show user name */}
+        Welcome, <b>{name}</b>!
+      </h2>
       {/*
       <NextHeaderAndFooter />
       <NextLogo />
