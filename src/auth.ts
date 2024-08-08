@@ -41,7 +41,35 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-      // NOTE 2024.08.08, 19:43: Error after th sign-in procudure: This GitHub App must be configured with a callback URL
+      /* // UNUSED, SAMPLE: Profile method
+       * profile(profile) {
+       *   / * // Sample profile data:
+       *    * organizations_url = 'https://api.github.com/users/lilliputten/orgs'
+       *    * public_gists = 1
+       *    * public_repos = 97
+       *    * received_events_url = 'https://api.github.com/users/lilliputten/received_events'
+       *    * repos_url = 'https://api.github.com/users/lilliputten/repos'
+       *    * site_admin = false
+       *    * starred_url = 'https://api.github.com/users/lilliputten/starred{/owner}{/repo}'
+       *    * subscriptions_url = 'https://api.github.com/users/lilliputten/subscriptions'
+       *    * twitter_username = null
+       *    * type = 'User'
+       *    * updated_at = '2024-07-26T07:11:49Z'
+       *    * url = 'https://api.github.com/users/lilliputten'
+       *    * /
+       *   console.log('[auth:NextAuth:GitHubProvider]', {
+       *     profile,
+       *   });
+       *   debugger;
+       *   return {
+       *     id: profile.id.toString(),
+       *     name: profile.name || profile.login,
+       *     gh_username: profile.login,
+       *     email: profile.email,
+       *     image: profile.avatar_url,
+       *   };
+       * },
+       */
     }),
   ],
 });

@@ -28,13 +28,16 @@ export function HomePage() {
       <div>
         <ul className={styles.RootList}>
           <li>
+            <Link href="/nextpage">Default NextJS info page</Link>
+          </li>
+          <li>
             <Link href="/regular">Regular page</Link>
           </li>
           <li>
             <Link href="/secure">Secure page</Link>
           </li>
           <li>
-            <Link href="/nextpage">Default NextJS info page</Link>
+            <Link href="/login">Login page</Link>
           </li>
         </ul>
       </div>

@@ -1,13 +1,7 @@
-// 'use client';
-
-import { useActionState } from 'react';
 import classNames from 'classnames';
 
-import { authenticate } from '@/lib/actions';
 import { CredentialsFrom } from './CredentialsFrom';
-import { FormActions } from './FormActions';
-import { ShowErrors } from './ShowErrors';
-import { SocialsLoginsForm } from './SocialsLoginsForm';
+import { SocialLoginForm } from './SocialLoginForm';
 
 const Title = () => (
   <h1
@@ -40,7 +34,7 @@ export function LoginForm() {
     >
       <Title />
       <CredentialsFrom />
-      <SocialsLoginsForm />
+      <SocialLoginForm />
     </div>
   );
 }

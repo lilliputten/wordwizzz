@@ -1,12 +1,11 @@
 import classNames from 'classnames';
 
-export type TSocialLoginId = 'github' | 'facebook';
+export type TSocialLoginProviderId = 'github' | 'facebook';
 
 interface TProps {
-  provider: TSocialLoginId;
+  provider: TSocialLoginProviderId;
   title: string;
   icon: React.ReactNode; // JSX.Element;
-  // handleSocialLoginClick?: (formData: FormData) => void; // (provider: TSocialLoginId) => void;
 }
 
 export const SocialLoginButton = (props: TProps) => {
@@ -59,8 +58,6 @@ export const SocialLoginButton = (props: TProps) => {
         'bg-gray-50',
         'dark:bg-slate-700',
       )}
-      // style="background-color: #3b5998"
-      // href="#!"
       role="button"
       data-twe-ripple-init
       data-twe-ripple-color="light"

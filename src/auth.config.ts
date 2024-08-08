@@ -1,11 +1,4 @@
 import type { NextAuthConfig } from 'next-auth';
-// import GoogleProvider from 'next-auth/providers/google';
-import GitHubProvider from 'next-auth/providers/github';
-import Credentials from 'next-auth/providers/credentials';
-import { z } from 'zod';
-import bcrypt from 'bcrypt';
-
-import { getUser } from '@/lib/db';
 
 export const authConfig: NextAuthConfig = {
   debug: true,
@@ -36,18 +29,8 @@ export const authConfig: NextAuthConfig = {
         }
         return false; // Redirect unauthenticated users to login page
       } else if (isLoggedIn) {
-        // TODO: It's required to update session (from `auth) here -- ?
-        const response = Response.redirect(new URL('/secure', nextUrl));
-        // // NOTE: This call causes multiple import errors here
-        // const session = await nextAuth(request as NextApiRequest, response);
-        /* console.log('[auth.config:authorized] Redirecting', name, {
-         *   request,
-         *   response,
-         *   // session,
-         *   // nextAuth,
-         * });
-         */
-        return response;
+        // TODO: It's required to update session (from `auth) here -- see Issue #8?
+        return Response.redirect(new URL('/secure', nextUrl));
       }
       return true;
     },
