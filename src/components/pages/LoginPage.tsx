@@ -1,5 +1,5 @@
 import { AcmeLogo } from '@/ui/acme-logo';
-import { LoginForm } from '@/ui/login-form';
+import { LoginForm } from '@/ui/Login';
 
 export function LoginPage() {
   return (

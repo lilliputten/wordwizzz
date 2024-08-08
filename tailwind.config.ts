@@ -4,6 +4,8 @@ import type { Config } from 'tailwindcss';
 // @see https://tailwindcss.com/docs/theme
 
 const config: Config = {
+  // @see https://tailwindcss.com/docs/dark-mode
+  // darkMode: 'selector',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',

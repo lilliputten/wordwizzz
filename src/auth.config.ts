@@ -1,12 +1,17 @@
 import type { NextAuthConfig } from 'next-auth';
 // import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
+import Credentials from 'next-auth/providers/credentials';
+import { z } from 'zod';
+import bcrypt from 'bcrypt';
+
+import { getUser } from '@/lib/db';
 
 export const authConfig: NextAuthConfig = {
   debug: true,
   pages: {
     signIn: '/login',
-    // signOut: '/auth/logout',
+    signOut: '/',
     // error: '/auth/error',
     // verifyRequest: '/auth/verify-request',
   },
@@ -60,16 +65,5 @@ export const authConfig: NextAuthConfig = {
     // strategy: 'jwt',
     maxAge: 1 * 24 * 60 * 60,
   },
-  providers: [
-    // Add providers with an empty array for now
-    // CredentialsProvider({ /* ... */ }),
-    // GoogleProvider({
-    //   clientId: process.env.GOOGLE_CLIENT_ID,
-    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    // }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-    }),
-  ],
+  providers: [], // See providers configuration in `src/auth.ts`
 } satisfies NextAuthConfig;

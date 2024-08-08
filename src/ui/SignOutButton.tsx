@@ -5,7 +5,7 @@ import { PowerIcon } from '@heroicons/react/24/outline';
 import { Session } from 'next-auth';
 // import { useSession, signOut } from 'next-auth/react';
 
-import { Button } from '@/ui/button';
+import { BasicButton } from '@/ui/BasicButton';
 import { TPropsWithClassName } from '@/core/types/generic';
 
 interface TSignOutButtonProps extends TPropsWithClassName {
@@ -42,11 +42,11 @@ export const SignOutButton: React.FC<TSignOutButtonProps> = (props) => {
     !isLoggingOut;
   // DEBUG: Show session state...
   React.useEffect(() => {
-    console.log('[SignOutButton] Session', serverSession?.user?.email, serverSession);
-  }, [serverSession]);
+    console.log('[SignOutButton] Session', isLoggingOut, serverSession?.user?.email, serverSession);
+  }, [serverSession, isLoggingOut]);
   return (
     <>
-      <Button
+      <BasicButton
         // Sign out button
         className={className}
         disabled={!hasSession}
@@ -54,7 +54,7 @@ export const SignOutButton: React.FC<TSignOutButtonProps> = (props) => {
       >
         <PowerIcon className="w-6" />
         <div className="hidden md:block">Sign Out</div>
-      </Button>
+      </BasicButton>
     </>
   );
 };

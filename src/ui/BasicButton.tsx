@@ -9,7 +9,7 @@ import { TPropsWithChildrenAndClassName } from '@/core/types/generic';
 
 type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & TPropsWithChildrenAndClassName;
 
-export const Button = React.forwardRef<HTMLButtonElement, TButtonProps>(
+export const BasicButton = React.forwardRef<HTMLButtonElement, TButtonProps>(
   function Button(fwdProps, ref) {
     const { className, children, disabled, ...rest } = fwdProps;
     const composedClassName = classNames(

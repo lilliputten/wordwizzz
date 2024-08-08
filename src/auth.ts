@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
+import GitHubProvider from 'next-auth/providers/github';
 import { z } from 'zod';
 import bcrypt from 'bcrypt';
 
@@ -9,6 +10,7 @@ import { getUser } from '@/lib/db';
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
+    ...authConfig.providers,
     Credentials({
       // @see https://authjs.dev/getting-started/authentication/credentials
       async authorize(credentials) {
@@ -35,6 +37,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         console.error('[auth:NextAuth:authorize] Invalid credentials');
         return null;
       },
+    }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+      // NOTE 2024.08.08, 19:43: Error after th sign-in procudure: This GitHub App must be configured with a callback URL
     }),
   ],
 });
