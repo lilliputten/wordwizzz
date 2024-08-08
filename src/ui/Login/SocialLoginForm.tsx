@@ -7,10 +7,9 @@ import { SocialLoginDivider } from './SocialLoginDivider';
 import {
   GoogleIcon,
   GithubIcon,
+  YandexIcon,
   // FacebookIcon,
-  // YandexIcon,
 } from './socialIcons';
-// import { BasicButton } from '../BasicButton';
 
 export function SocialLoginForm() {
   const socialLoginCallback = async (formData: FormData) => {
@@ -33,9 +32,7 @@ export function SocialLoginForm() {
         {/* Social login buttons */}
         <SocialLoginButton provider="github" title="Github" icon={<GithubIcon />} />
         <SocialLoginButton provider="google" title="Google" icon={<GoogleIcon />} />
-        {/*
-        <BasicButton>Test</BasicButton>
-        */}
+        <SocialLoginButton provider="yandex" title="Yandex" icon={<YandexIcon />} />
       </form>
     </div>
   );

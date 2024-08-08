@@ -5,6 +5,7 @@ import bcrypt from 'bcrypt';
 import Credentials from 'next-auth/providers/credentials';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
+import YandexProvider from 'next-auth/providers/yandex';
 
 import { authConfig } from '@/auth.config';
 import { getUser } from '@/lib/db';
@@ -46,18 +47,18 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       /* // UNUSED, SAMPLE: Profile method
        * profile(profile) {
        *   / * // Sample profile data:
-       *    * organizations_url = 'https://api.github.com/users/lilliputten/orgs'
-       *    * public_gists = 1
-       *    * public_repos = 97
-       *    * received_events_url = 'https://api.github.com/users/lilliputten/received_events'
-       *    * repos_url = 'https://api.github.com/users/lilliputten/repos'
-       *    * site_admin = false
-       *    * starred_url = 'https://api.github.com/users/lilliputten/starred{/owner}{/repo}'
-       *    * subscriptions_url = 'https://api.github.com/users/lilliputten/subscriptions'
-       *    * twitter_username = null
-       *    * type = 'User'
-       *    * updated_at = '2024-07-26T07:11:49Z'
-       *    * url = 'https://api.github.com/users/lilliputten'
+       *    * organizations_url: 'https://api.github.com/users/lilliputten/orgs'
+       *    * public_gists: 1
+       *    * public_repos: 97
+       *    * received_events_url: 'https://api.github.com/users/lilliputten/received_events'
+       *    * repos_url: 'https://api.github.com/users/lilliputten/repos'
+       *    * site_admin: false
+       *    * starred_url: 'https://api.github.com/users/lilliputten/starred{/owner}{/repo}'
+       *    * subscriptions_url: 'https://api.github.com/users/lilliputten/subscriptions'
+       *    * twitter_username: null
+       *    * type: 'User'
+       *    * updated_at: '2024-07-26T07:11:49Z'
+       *    * url: 'https://api.github.com/users/lilliputten'
        *    * /
        *   console.log('[auth:NextAuth:GitHubProvider]', {
        *     profile,
@@ -76,6 +77,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    YandexProvider({
+      clientId: process.env.YANDEX_CLIENT_ID,
+      clientSecret: process.env.YANDEX_CLIENT_SECRET,
     }),
   ],
 });

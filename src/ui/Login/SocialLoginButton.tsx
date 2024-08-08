@@ -1,7 +1,10 @@
+'use client';
+
+import React from 'react';
 import classNames from 'classnames';
 import { BasicButton } from '../BasicButton';
 
-export type TSocialLoginProviderId = 'github' | 'google';
+export type TSocialLoginProviderId = 'github' | 'google' | 'yandex';
 
 interface TProps {
   provider: TSocialLoginProviderId;
@@ -16,14 +19,37 @@ export const SocialLoginButton = (props: TProps) => {
     title,
     icon,
   } = props;
+  const [isLogging, setLogging] = React.useState(false);
+  const onButtonClick = React.useCallback(() => {
+    console.log('[SocialLoginButton:onButtonClick]');
+    requestAnimationFrame(() => {
+      setLogging(true);
+    });
+  }, []);
   return (
     <BasicButton
       // prettier-ignore
       id={'SocialLoginButton-' + provider}
       name="provider"
       value={provider}
+      disabled={isLogging}
+      onClick={onButtonClick}
     >
-      <span className={classNames('w-5', 'fill-white')}>{icon}</span>
+      <span
+        // prettier-ignore
+        className={classNames(
+          // prettier-ignore
+          'w-5',
+          'h-5',
+          'fill-white',
+          'flex',
+          'justify-center',
+          'items-center',
+          '[&>svg]:h-5',
+        )}
+      >
+        {icon}
+      </span>
       {title}
     </BasicButton>
   );
