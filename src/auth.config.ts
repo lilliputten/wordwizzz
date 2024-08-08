@@ -1,8 +1,6 @@
 import type { NextAuthConfig } from 'next-auth';
 // import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
-// import router from 'next/router';
-// import { useRouter } from 'next/navigation'
 
 export const authConfig: NextAuthConfig = {
   debug: true,
@@ -13,13 +11,14 @@ export const authConfig: NextAuthConfig = {
     // verifyRequest: '/auth/verify-request',
   },
   callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
+    async authorized({ auth, request }) {
+      const { nextUrl } = request;
       const { pathname } = nextUrl;
       const user = auth?.user;
+      const name = user?.name;
       const isLoggedIn = !!user;
       const isOnSecure = pathname.startsWith('/secure');
-      // const session = await getSession(headers: Headers, config: NextAuthConfig)
-      console.log('[auth.config:authorized]', user?.name, {
+      console.log('[auth.config:authorized]', name, {
         pathname,
         // user,
         auth,
@@ -33,7 +32,17 @@ export const authConfig: NextAuthConfig = {
         return false; // Redirect unauthenticated users to login page
       } else if (isLoggedIn) {
         // TODO: It's required to update session (from `auth) here -- ?
-        return Response.redirect(new URL('/secure', nextUrl));
+        const response = Response.redirect(new URL('/secure', nextUrl));
+        // // NOTE: This call causes multiple import errors here
+        // const session = await nextAuth(request as NextApiRequest, response);
+        /* console.log('[auth.config:authorized] Redirecting', name, {
+         *   request,
+         *   response,
+         *   // session,
+         *   // nextAuth,
+         * });
+         */
+        return response;
       }
       return true;
     },
@@ -48,7 +57,6 @@ export const authConfig: NextAuthConfig = {
     },
   },
   session: {
-    // jwt: true, // OBSOLETE
     // strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60,
   },
