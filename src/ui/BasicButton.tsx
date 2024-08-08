@@ -13,25 +13,28 @@ export const BasicButton = React.forwardRef<HTMLButtonElement, TButtonProps>(
   function Button(fwdProps, ref) {
     const { className, children, disabled, ...rest } = fwdProps;
     const composedClassName = classNames(
-      className,
       // @see https://tailwindui.com/components/application-ui/elements/buttons
       'flex',
       'items-center',
-      'gap-3',
-      'bg-blue-500',
+      'gap-2',
       'text-white',
-      'font-bold',
       'py-2',
       'px-4',
       'rounded',
       'transition',
+      'ease-in-out',
+      'bg-blue-500',
       !disabled && 'hover:bg-blue-700',
       disabled && 'opacity-50',
-      // disabled && 'cursor-not-allowed',
+      className,
     );
     return (
       <button
         ref={ref}
+        data-component="BasicButton"
+        role="button"
+        // @see https://www.creative-tim.com/twcomponents/component/tailwind-css-button-ripple-effect-by-material-tailwind
+        data-ripple-light="true"
         // @see https://tailwindui.com/components/application-ui/elements/buttons
         {...rest}
         className={composedClassName}

@@ -14,7 +14,7 @@ export function CredentialsFrom() {
   const [errorMessage, formAction, isPending] = useActionState(authenticate, undefined);
   return (
     <form action={formAction} className={classNames('space-y-3')}>
-      <LoginAndPasswordForm />
+      <LoginAndPasswordForm isPending={isPending} />
       <FormActions isPending={isPending} />
       <ShowErrors errorMessage={errorMessage} />
     </form>

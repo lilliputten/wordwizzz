@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { SessionProvider } from 'next-auth/react';
+import Script from 'next/script';
 
 import './globals.scss';
 
@@ -21,6 +22,10 @@ const RootLayout: React.FC<Props> = (props) => {
   const { children, session } = props;
   return (
     <html lang="en">
+      <Script
+        type="text/javascript"
+        src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"
+      />
       <body className={inter.className}>
         <SessionProvider session={session}>
           {/* Main content */}

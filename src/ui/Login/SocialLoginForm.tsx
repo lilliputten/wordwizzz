@@ -5,11 +5,12 @@ import { signIn } from '@/auth';
 import { SocialLoginButton, TSocialLoginProviderId } from './SocialLoginButton';
 import { SocialLoginDivider } from './SocialLoginDivider';
 import {
-  // FacebookIcon,
-  // GoogleIcon,
-  // YandexIcon,
+  GoogleIcon,
   GithubIcon,
+  // FacebookIcon,
+  // YandexIcon,
 } from './socialIcons';
+// import { BasicButton } from '../BasicButton';
 
 export function SocialLoginForm() {
   const socialLoginCallback = async (formData: FormData) => {
@@ -20,14 +21,21 @@ export function SocialLoginForm() {
   return (
     <div className={classNames('w-full')}>
       <SocialLoginDivider />
-      <form action={socialLoginCallback}>
+      <form
+        action={socialLoginCallback}
+        className={classNames(
+          // prettier-ignore
+          'flex',
+          'flex-col',
+          'gap-3',
+        )}
+      >
         {/* Social login buttons */}
-        <SocialLoginButton
-          // Github
-          provider="github"
-          title="Github"
-          icon={<GithubIcon />}
-        />
+        <SocialLoginButton provider="github" title="Github" icon={<GithubIcon />} />
+        <SocialLoginButton provider="google" title="Google" icon={<GoogleIcon />} />
+        {/*
+        <BasicButton>Test</BasicButton>
+        */}
       </form>
     </div>
   );

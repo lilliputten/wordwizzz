@@ -2,7 +2,7 @@ import { AtSymbolIcon, KeyIcon } from '@heroicons/react/24/outline';
 
 import classNames from 'classnames';
 
-export function LoginAndPasswordForm() {
+export function LoginAndPasswordForm({ isPending }: { isPending?: boolean }) {
   return (
     <div className={classNames('w-full')}>
       <div>
@@ -36,11 +36,13 @@ export function LoginAndPasswordForm() {
               'outline-2',
               'placeholder:text-gray-500',
               'text-gray-900',
+              isPending && 'opacity-50',
             )}
             id="email"
             type="email"
             name="email"
             placeholder="Enter your email address"
+            disabled={isPending}
             required
           />
           <AtSymbolIcon
@@ -88,11 +90,13 @@ export function LoginAndPasswordForm() {
               'outline-2',
               'placeholder:text-gray-500',
               'text-gray-900',
+              isPending && 'opacity-50',
             )}
             id="password"
             type="password"
             name="password"
             placeholder="Enter password"
+            disabled={isPending}
             required
             minLength={6}
           />

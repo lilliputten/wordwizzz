@@ -3,7 +3,7 @@
 import React from 'react';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import { Session } from 'next-auth';
-// import { useSession, signOut } from 'next-auth/react';
+import classNames from 'classnames';
 
 import { BasicButton } from '@/ui/BasicButton';
 import { TPropsWithClassName } from '@/core/types/generic';
@@ -47,8 +47,8 @@ export const SignOutButton: React.FC<TSignOutButtonProps> = (props) => {
   return (
     <>
       <BasicButton
-        // Sign out button
-        className={className}
+        // prettier-ignore
+        className={classNames(className)}
         disabled={!hasSession}
         onClick={onButtonClick}
       >

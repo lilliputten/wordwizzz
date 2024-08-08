@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { PowerIcon } from '@heroicons/react/24/outline';
 
 import { NavLinks } from '@/ui/secure/nav-links';
-import { AcmeLogo } from '@/ui/acme-logo';
+import { AcmeLogo } from '@/ui/AcmeLogo';
 import { signOut } from '@/auth';
 
 export default function SideNav() {

@@ -1,4 +1,4 @@
-import { AcmeLogo } from '@/ui/acme-logo';
+import { AcmeLogo } from '@/ui/AcmeLogo';
 import { LoginForm } from '@/ui/Login';
 
 export function LoginPage() {
