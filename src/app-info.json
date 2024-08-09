@@ -1,10 +1,10 @@
 {
   "projectName": "nextjs-auth-app",
-  "timestamp": "2024.08.06 16:43 +0300",
-  "timetag": "240806-1643",
-  "version": "0.0.2",
-  "currentTimeStr": "2024.08.06 16:43 +0300",
-  "currentTimeTag": "240806-1643",
-  "gitCommitHash": "381c60a",
-  "gitBranch": "main"
+  "timestamp": "2024.08.09 17:11 +0300",
+  "timetag": "240809-1711",
+  "version": "0.0.3",
+  "currentTimeStr": "2024.08.09 17:11 +0300",
+  "currentTimeTag": "240809-1711",
+  "gitCommitHash": "49b752a",
+  "gitBranch": "6-oauth-providers"
 }
