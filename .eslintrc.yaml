@@ -96,6 +96,7 @@ overrides:
       '@typescript-eslint/prefer-function-type': 'warn'
       '@typescript-eslint/consistent-type-definitions': 'error'
       # 'type-annotation-spacing': 'error' # ???
+      react/prop-types: 'off'
       react/no-multi-comp:
         - 'error'
         - ignoreStateless: true
