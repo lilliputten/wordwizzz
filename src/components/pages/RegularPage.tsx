@@ -4,6 +4,8 @@
 
 import classNames from 'classnames';
 
+import { GenericLayout } from '@/components/layouts/GenericLayout';
+
 // import { NextRubrics } from '@/components/nextPage/NextRubrics';
 // import { NextLogo } from '@/components/nextPage/NextLogo';
 // import { NextHeaderAndFooter } from '@/components/nextPage/NextHeaderAndFooter';
@@ -12,23 +14,29 @@ import classNames from 'classnames';
 
 export function RegularPage() {
   return (
-    <main
-      className={classNames(
-        // styles.test,
-        'flex',
-        'min-h-screen',
-        'flex-col',
-        'items-center',
-        'justify-between',
-        'p-24',
-      )}
+    <GenericLayout
+      // prettier-ignore
+      mainOverflow="auto"
     >
-      <h1>Regular page</h1>
-      {/*
-      <NextHeaderAndFooter />
-      <NextLogo />
-      <NextRubrics />
-      */}
-    </main>
+      <main
+        className={classNames(
+          // styles.test,
+          'flex',
+          // 'min-h-screen',
+          'flex-col',
+          'flex-1',
+          'items-center',
+          'justify-center',
+          // 'p-24',
+        )}
+      >
+        <h1>Regular page</h1>
+        {/*
+        <NextHeaderAndFooter />
+        <NextLogo />
+        <NextRubrics />
+        */}
+      </main>
+    </GenericLayout>
   );
 }

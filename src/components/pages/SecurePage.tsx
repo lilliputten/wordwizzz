@@ -6,16 +6,9 @@ import React from 'react';
 import classNames from 'classnames';
 import { auth } from '@/auth';
 
+import { GenericLayout } from '@/components/layouts/GenericLayout';
 import { signOut } from '@/auth';
 import { SignOutButton } from '@/ui/SignOutButton';
-
-// import { NextRubrics } from '@/components/nextPage/NextRubrics';
-// import { NextLogo } from '@/components/nextPage/NextLogo';
-// import { NextHeaderAndFooter } from '@/components/nextPage/NextHeaderAndFooter';
-
-// import styles from './test.module.scss';
-
-// export const dynamic = 'force-dynamic';
 
 export const SecurePage: React.FC = async () => {
   const session = await auth();
@@ -36,32 +29,38 @@ export const SecurePage: React.FC = async () => {
     });
   };
   return (
-    <main
-      className={classNames(
-        // styles.test,
-        'flex',
-        'min-h-screen',
-        'flex-col',
-        'items-center',
-        'gap-6',
-        'justify-center',
-        // 'justify-between',
-        'p-24',
-      )}
+    <GenericLayout
+      // prettier-ignore
+      mainOverflow="auto"
     >
-      <h1>Secure page</h1>
-      <h2>
-        {/* Show user name */}
-        Welcome, <b>{name}</b>!
-      </h2>
-      {/*
-      <NextHeaderAndFooter />
-      <NextLogo />
-      <NextRubrics />
-      */}
-      <form action={signOutCallback}>
-        <SignOutButton session={session} />
-      </form>
-    </main>
+      <main
+        className={classNames(
+          // styles.test,
+          'flex',
+          // 'min-h-screen',
+          'flex-1',
+          'flex-col',
+          'items-center',
+          'gap-6',
+          'justify-center',
+          // 'justify-between',
+          // 'p-4',
+        )}
+      >
+        <h1>Secure page</h1>
+        <h2>
+          {/* Show user name */}
+          Welcome, <b>{name}</b>!
+        </h2>
+        {/*
+        <NextHeaderAndFooter />
+        <NextLogo />
+        <NextRubrics />
+        */}
+        <form action={signOutCallback}>
+          <SignOutButton session={session} />
+        </form>
+      </main>
+    </GenericLayout>
   );
 };
