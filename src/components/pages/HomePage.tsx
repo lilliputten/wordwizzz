@@ -13,7 +13,7 @@ import { NextLogo } from '@/components/nextPage/NextLogo';
 import styles from './test.module.scss';
 
 export function HomePage() {
-  const testContent = Array.from(new Array(40)).map((_, n) => {
+  const testContent = Array.from(new Array(30)).map((_, n) => {
     const k = String(n);
     return <p key={k}>Item {n}</p>;
   });
@@ -57,11 +57,11 @@ export function HomePage() {
         <NextHeaderAndFooter className={styles.headerAndFooter} />
         <NextLogo />
         <NextRubrics />
+        */}
         <div className="demContent flex flex-col items-center">
           <h3>Demo content:</h3>
           {testContent}
         </div>
-        */}
       </main>
     </GenericLayout>
   );

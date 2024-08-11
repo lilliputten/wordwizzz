@@ -4,10 +4,9 @@
 
 import React from 'react';
 import classNames from 'classnames';
-import { auth } from '@/auth';
 
+import { auth, signOut } from '@/auth';
 import { GenericLayout } from '@/components/layouts/GenericLayout';
-import { signOut } from '@/auth';
 import { SignOutButton } from '@/ui/SignOutButton';
 
 export const SecurePage: React.FC = async () => {
