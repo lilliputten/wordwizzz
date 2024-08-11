@@ -8,7 +8,7 @@ import { MaxWidthWrapper } from './MaxWidthWrapper';
 interface TProps extends TPropsWithChildrenAndClassName {
   mainOverflow?: 'auto' | 'hidden';
   mainDirection?: 'column' | 'row';
-  mainjustfycontent?:
+  mainJustfyContent?:
     | 'center'
     | 'start'
     | 'end'
