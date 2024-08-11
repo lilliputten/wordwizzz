@@ -25,12 +25,11 @@ export const SignOutButton: React.FC<TSignOutButtonProps> = (props) => {
    */
   // Disable sign out button on click...
   const onButtonClick = React.useCallback(() => {
-    console.log('[SignOutButton:onButtonClick]');
     // NOTE: Use a delay to allow process form submission (eg, in `SecurePage` form)
     requestAnimationFrame(() => {
       setLoggingOut(true);
     });
-    /* // Alternative sign-out, on the client-side (see other in server-side `SecurePage`)
+    /* // Alternative sign-out, on the client-side (see other approach in server-side `SecurePage`)
      * signOut();
      */
   }, []);
@@ -40,10 +39,14 @@ export const SignOutButton: React.FC<TSignOutButtonProps> = (props) => {
     !!serverSession.user &&
     // Check logging out status
     !isLoggingOut;
-  // DEBUG: Show session state...
-  React.useEffect(() => {
-    console.log('[SignOutButton] Session', isLoggingOut, serverSession?.user?.email, serverSession);
-  }, [serverSession, isLoggingOut]);
+  /** // DEBUG: Show session state...
+   * React.useEffect(() => {
+   *   console.log('[SignOutButton] Session', serverSession?.user?.email, serverSession, {
+   *     isLoggingOut,
+   *     hasSession,
+   *   });
+   * }, [serverSession, isLoggingOut, hasSession]);
+   */
   return (
     <>
       <BasicButton
