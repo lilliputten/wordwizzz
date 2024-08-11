@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { TPropsWithChildrenAndClassName } from '@/core/types/generic';
 import { AppFooter } from './AppFooter';
 import { AppHeader } from './AppHeader';
+import { MaxWidthWrapper } from './MaxWidthWrapper';
 
 interface TProps extends TPropsWithChildrenAndClassName {
   mainOverflow?: 'auto' | 'hidden';
@@ -47,6 +48,7 @@ export const GenericLayout: React.FC<TProps> = (props) => {
         'flex',
         'flex-col',
         'h-screen',
+        'items-stretch',
       )}
     >
       <AppHeader

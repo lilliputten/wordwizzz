@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 
+import { MaxWidthWrapper } from './MaxWidthWrapper';
 import { TPropsWithClassName } from '@/core/types/generic';
 
 type TProps = TPropsWithClassName;
@@ -8,40 +9,48 @@ type TProps = TPropsWithClassName;
 export const AppHeader: React.FC<TProps> = (props) => {
   const { className } = props;
   return (
-    <div
+    <MaxWidthWrapper
       className={classNames(
         // prettier-ignore
         className,
         'AppHeader',
-        'flex',
-        'justify-between',
-        'items-center',
-        'gap-4',
-        'p-4',
+        'border-b border-blue-900',
       )}
     >
       <div
         className={classNames(
           // prettier-ignore
-          'AppHeader_Brand',
+          'AppHeader_Container',
           'flex',
-          'justify-center',
+          'justify-between',
           'items-center',
+          'gap-4',
+          'p-4',
         )}
       >
-        <Link href="/">Brand</Link>
+        <div
+          className={classNames(
+            // prettier-ignore
+            'AppHeader_Brand',
+            'flex',
+            'justify-center',
+            'items-center',
+          )}
+        >
+          <Link href="/">Brand</Link>
+        </div>
+        <div
+          className={classNames(
+            // prettier-ignore
+            'AppHeader_Menu',
+            'flex',
+            'justify-center',
+            'items-center',
+          )}
+        >
+          <Link href="/">Top Menu</Link>
+        </div>
       </div>
-      <div
-        className={classNames(
-          // prettier-ignore
-          'AppHeader_Menu',
-          'flex',
-          'justify-center',
-          'items-center',
-        )}
-      >
-        <Link href="/">Menu</Link>
-      </div>
-    </div>
+    </MaxWidthWrapper>
   );
 };
