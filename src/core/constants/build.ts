@@ -9,7 +9,7 @@ export const {
   currentTimeTag, // "240809-1711"
   gitBranch, // "6-oauth-providers"
   gitCommitHash, // "49b752a"
-  projectName, // "nextjs-auth-app"
+  projectName, // "wordwizzz"
   timestamp, // "2024.08.09 17:11 +0300"
   timetag, // "240809-1711"
   version, // "0.0.3"
