@@ -1,4 +1,11 @@
 import type { Config } from 'tailwindcss';
+// import flowbite from 'flowbite/plugin';
+
+// @ts-ignore: No typings
+// import withMT from '@material-tailwind/html/utils/withMT';
+import withMT from '@material-tailwind/react/utils/withMT';
+
+// @see https://material-tailwind.com/docs/react/guide/next
 
 // @see https://tailwindcss.com/docs/adding-custom-styles
 // @see https://tailwindcss.com/docs/theme
@@ -11,6 +18,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/ui/**/*.{js,ts,jsx,tsx,mdx}',
+    // './node_modules/flowbite/**/*.js',
   ],
   theme: {
     extend: {
@@ -32,7 +40,10 @@ const config: Config = {
     'gray-light': '#d3dce6',
     'app-red': '#b23',
   },
-  plugins: [],
+  plugins: [
+    // @see https://flowbite.com/docs/getting-started/quickstart
+    // flowbite,
+  ],
 };
 
-export default config;
+export default withMT(config);
