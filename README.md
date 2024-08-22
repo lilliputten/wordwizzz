@@ -1,14 +1,14 @@
 <!--
-@since 2024.08.02, 20:19
-@changed 2024.08.06, 18:44
+@since 2024.08.22, 19:22
+@changed 2024.08.22, 19:22
 -->
 
-# NextJS Auth application
+# WordWizzz word learning NextJS application
 
 TODO: Describe workflow here.
 
-- Version: 0.0.3
-- Last changes timestamp: 2024.08.09 17:11 +0300
+- Version: 0.0.0
+- Last changes timestamp: 2024.08.22 19:38 +0300
 
 TODO: Add the project description.
 
@@ -16,7 +16,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Deployment
 
-Vercel domain: nextjs-auth-app-beige.vercel.app
+Vercel domain: wordwizzz-beige.vercel.app
 
 ## Getting Started
 
