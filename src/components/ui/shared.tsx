@@ -3,7 +3,9 @@
 export {
   // prettier-ignore
   Button,
+  Collapse,
   IconButton,
+  MaterialTailwindTheme,
   MobileNav,
   Navbar,
   Popover,
@@ -11,4 +13,5 @@ export {
   PopoverHandler,
   ThemeProvider,
   Typography,
+  useTheme,
 } from '@material-tailwind/react';

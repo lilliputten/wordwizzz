@@ -19,9 +19,12 @@ export const AppHeader: React.FC<TProps> = (props) => {
         // prettier-ignore
         className,
         'AppHeader',
-        'border-b border-blue-900',
-        'bg-white',
-        'dark:bg-gray-800',
+        // 'border-b',
+        // 'border-blue-900',
+        'bg-primary',
+        // 'bg-white',
+        // 'bg-gray-800',
+        // 'dark:bg-gray-800',
       )}
     >
       <AppNavBar />

@@ -12,6 +12,7 @@ import { ThemeProvider } from '@/components/ui/shared';
 // import '@material-tailwind/html/styles/material-tailwind.css';
 
 import './globals.scss';
+import { ThemeWrapper } from '@/components/layouts/ThemeWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,10 +31,10 @@ const RootLayout: React.FC<Props> = (props) => {
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider session={session}>
-          <ThemeProvider>
+          <ThemeWrapper>
             {/* Main content */}
             {children as React.ReactElement}
-          </ThemeProvider>
+          </ThemeWrapper>
         </SessionProvider>
       </body>
       {/* NOTE: Experiments with low-level html tailwind approach
