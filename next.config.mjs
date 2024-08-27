@@ -6,6 +6,11 @@ const nextConfig = {
     // @see https://nextjs.org/learn/dashboard-app/partial-prerendering#implementing-partial-prerendering
     ppr: 'incremental',
   },
+  devIndicators: {
+    /* // DEBUG: Hide 'Statically rendered page' popup (this approach doesn't work)
+     * autoPrerender: false,
+     */
+  },
   /* // UNUSED: Provide static scripts for low-level tailwind environment (unused in favor of @material-tailwind/react):
    * webpack: (config) => {
    *   const copyPlugin = new CopyPlugin({

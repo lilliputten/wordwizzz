@@ -3,26 +3,28 @@
 import React from 'react';
 import classNames from 'classnames';
 import Image from 'next/image';
-
-import { useTheme, Typography, Navbar, Button, IconButton, Collapse } from '@/components/ui/shared';
-import { NavBarMenu } from './NavBarMenu';
 import Link from 'next/link';
+
+import { Navbar, IconButton, Collapse } from '@/components/ui/shared';
+import { NavBarMenu } from './NavBarMenu';
 import { NavBarButtons } from './NavBarButtons';
+
+const logoSize = 96;
 
 export const AppNavBar: React.FC = () => {
   // @see https://www.material-tailwind.com/docs/react/navbar
   const [openNav, setOpenNav] = React.useState(false);
 
-  const theme = useTheme();
-  console.log('[AppHeader]', {
-    theme,
-  });
+  /* // DEBUG
+   * const theme = useTheme();
+   * console.log('[AppHeader]', {
+   *   theme,
+   * });
+   */
 
   React.useEffect(() => {
     window.addEventListener('resize', () => window.innerWidth >= 960 && setOpenNav(false));
   }, []);
-
-  const logoSize = 96;
 
   return (
     <Navbar
@@ -33,60 +35,37 @@ export const AppNavBar: React.FC = () => {
       blurred={false}
       className={classNames(
         '--AppNavBar--',
-
         'px-4',
         'bg-transparent',
-        // 'shadow-none',
 
         // 'sticky',
         // 'top-0',
+
         'z-10',
         'h-max',
-        // 'max-w-full',
         'rounded-none',
-        // 'px-4',
         'py-2',
-        // 'lg:px-8',
         'lg:py-4',
-
-        // 'mx-auto',
-        // 'max-w-screen-xl',
-        // // 'px-4',
-        // 'py-2',
-        // // 'lg:px-8',
-        // 'lg:py-4',
       )}
     >
       <div
         className={classNames(
-          // 'container',
-          // 'w-full',
+          // prettier-ignore
           'mx-auto',
           'flex',
           'items-center',
           'justify-between',
           'gap-2',
-          // 'text-blue-gray-900',
         )}
       >
-        <Link href="/">
+        <Link href="/" className={classNames('hover:opacity-80', 'transition-opacity')}>
           <Image
-            className={classNames('hover:opacity-80', 'transition-opacity')}
-            src="/static/images/logo/wz-logo-v1-tr.svg"
+            src="/static/images/logo/v1/tr.svg"
             width={logoSize}
             height={logoSize}
-            alt="WordWizzz! logo"
+            alt="Logo"
           />
         </Link>
-        {/*
-        <Typography
-          as="a"
-          href="#"
-          className={classNames('mr-4', 'cursor-pointer', 'py-1.5', 'font-medium', 'text-red')}
-        >
-          WordWizzz!
-        </Typography>
-        */}
         <div className={classNames('hidden', 'lg:block')}>
           <NavBarMenu />
         </div>

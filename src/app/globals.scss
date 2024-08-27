@@ -27,3 +27,10 @@ body {
     text-wrap: balance;
   }
 }
+
+/* // DEBUG: Hide 'Statically rendered page' popup (this approach doesn't work)
+ * .nextjs-static-indicator-toast-wrapper {
+ *   border: 5px solid green !important;
+ *   display: none;
+ * }
+ */

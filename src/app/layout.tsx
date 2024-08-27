@@ -2,17 +2,14 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { SessionProvider } from 'next-auth/react';
-// import { ThemeProvider } from '@material-tailwind/react';
 // import Script from 'next/script';
 // import Head from 'next/head'
 
-// NOTE: Theme context is client-only component!
-import { ThemeProvider } from '@/components/ui/shared';
+import { ThemeWrapper } from '@/components/layouts/ThemeWrapper';
 
 // import '@material-tailwind/html/styles/material-tailwind.css';
 
 import './globals.scss';
-import { ThemeWrapper } from '@/components/layouts/ThemeWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
