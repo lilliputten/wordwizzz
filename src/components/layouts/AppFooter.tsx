@@ -110,14 +110,6 @@ export const AppFooter: React.FC<TProps> = (props) => {
           />
           <Typography className={classNames('font-normal')}>&copy; 2024 WordQizzz!</Typography>
         </Link>
-        <div
-          className={classNames(
-            // prettier-ignore
-            '--AppFooter_Version--',
-          )}
-        >
-          {versionHash}
-        </div>
         <ul
           className={classNames(
             // prettier-ignore
@@ -132,6 +124,16 @@ export const AppFooter: React.FC<TProps> = (props) => {
         >
           {itemsContent}
         </ul>
+        <Typography
+          className={classNames(
+            // prettier-ignore
+            '--AppFooter_Version--',
+            'text-sm',
+            'opacity-50',
+          )}
+        >
+          {versionHash}
+        </Typography>
       </footer>
     </MaxWidthWrapper>
   );
