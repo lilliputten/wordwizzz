@@ -1,5 +1,5 @@
 /** @desc Update build date/time tag file with current timestamp
- *  @changed 2024.02.21, 17:18
+ *  @changed 2024.08.27, 17:22
  */
 /* eslint-disable no-console */
 
@@ -22,7 +22,7 @@ const rootPath = path.resolve(path.dirname(scriptsPath));
 // const prjPath = path.resolve(path.dirname(scriptsPath));
 const prjPath = process.cwd();
 const srcPath = path.resolve(prjPath, 'src');
-const staticPath = path.resolve(prjPath, 'static');
+const publicPath = path.resolve(prjPath, 'public');
 
 // TODO: Add local config
 const configFileName = path.resolve(rootPath, 'config.js');
@@ -69,8 +69,8 @@ fs.writeFileSync(timetagFileName, buildTag, 'utf8');
 fs.writeFileSync(timestampFileName, buildTzTime, 'utf8');
 
 // Write build info data to use in the source code (if the folder already exists)...
-if (fs.existsSync(srcPath)) {
-  const buildInfoJsonFileName = path.resolve(srcPath, buildInfoJsonFilename);
+if (fs.existsSync(publicPath)) {
+  const buildInfoJsonFileName = path.resolve(publicPath, buildInfoJsonFilename);
   console.log('Creating', buildInfoJsonFilename, 'file...');
   fs.writeFileSync(buildInfoJsonFileName, JSON.stringify(getBuildInfo(), undefined, 2) + '\n', 'utf8');
 }
