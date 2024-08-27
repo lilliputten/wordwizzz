@@ -1,8 +1,13 @@
-import Link from 'next/link';
+// import Link from 'next/link';
+// import Image from 'next/image';
 import classNames from 'classnames';
+// import { Popover, PopoverHandler, PopoverContent, Button } from '@material-tailwind/react';
+
+import { TPropsWithClassName } from '@/core/types/generic';
+// import { Button, Popover, PopoverContent, PopoverHandler } from '@/components/ui/shared';
 
 import { MaxWidthWrapper } from './MaxWidthWrapper';
-import { TPropsWithClassName } from '@/core/types/generic';
+import { AppNavBar } from './AppNavBar';
 
 type TProps = TPropsWithClassName;
 
@@ -14,43 +19,10 @@ export const AppHeader: React.FC<TProps> = (props) => {
         // prettier-ignore
         className,
         'AppHeader',
-        'border-b border-blue-900',
+        'bg-primary',
       )}
     >
-      <div
-        className={classNames(
-          // prettier-ignore
-          'AppHeader_Container',
-          'flex',
-          'justify-between',
-          'items-center',
-          'gap-4',
-          'p-4',
-        )}
-      >
-        <div
-          className={classNames(
-            // prettier-ignore
-            'AppHeader_Brand',
-            'flex',
-            'justify-center',
-            'items-center',
-          )}
-        >
-          <Link href="/">Brand</Link>
-        </div>
-        <div
-          className={classNames(
-            // prettier-ignore
-            'AppHeader_Menu',
-            'flex',
-            'justify-center',
-            'items-center',
-          )}
-        >
-          <Link href="/">Top Menu</Link>
-        </div>
-      </div>
+      <AppNavBar />
     </MaxWidthWrapper>
   );
 };

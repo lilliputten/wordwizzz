@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { TPropsWithChildrenAndClassName } from '@/core/types/generic';
 import { AppFooter } from './AppFooter';
 import { AppHeader } from './AppHeader';
-import { MaxWidthWrapper } from './MaxWidthWrapper';
+// import { MaxWidthWrapper } from './MaxWidthWrapper';
 
 interface TProps extends TPropsWithChildrenAndClassName {
   mainOverflow?: 'auto' | 'hidden';

@@ -4,12 +4,23 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@material-tailwind/react@2.1.9':
+    hash: 6xxul43h7j3fhec4fpetlaqg6e
+    path: patches/@material-tailwind__react@2.1.9.patch
+
 importers:
   .:
     dependencies:
       '@heroicons/react':
         specifier: ^2.1.5
         version: 2.1.5(react@19.0.0-rc-06d0b89e-20240801)
+      '@material-tailwind/react':
+        specifier: ^2.1.9
+        version: 2.1.9(patch_hash=6xxul43h7j3fhec4fpetlaqg6e)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
+      '@types/tinycolor2':
+        specifier: ^1.4.6
+        version: 1.4.6
       '@vercel/postgres':
         specifier: ^0.9.0
         version: 0.9.0
@@ -40,6 +51,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.7
         version: 3.4.7
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -343,6 +357,18 @@ packages:
         integrity: sha512-bV21/9LQmcQeCPEg3BDFtvwL6cwiTMksYNWQQ4KOxCZikEGalWtenoZ0wCiukJINlGCIi2KXx01g4FoH/LxpzQ==,
       }
 
+  '@emotion/is-prop-valid@0.8.8':
+    resolution:
+      {
+        integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==,
+      }
+
+  '@emotion/memoize@0.7.4':
+    resolution:
+      {
+        integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==,
+      }
+
   '@eslint-community/eslint-utils@4.4.0':
     resolution:
       {
@@ -372,6 +398,42 @@ packages:
         integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==,
       }
     engines: { node: ^12.22.0 || ^14.17.0 || >=16.0.0 }
+
+  '@floating-ui/core@1.6.7':
+    resolution:
+      {
+        integrity: sha512-yDzVT/Lm101nQ5TCVeK65LtdN7Tj4Qpr9RTXJ2vPFLqtLxwOrpoxAHAJI8J3yYWUc40J0BDBheaitK5SJmno2g==,
+      }
+
+  '@floating-ui/dom@1.6.10':
+    resolution:
+      {
+        integrity: sha512-fskgCFv8J8OamCmyun8MfjB1Olfn+uZKjOKZ0vhYF3gRmEUXcGOjxWL8bBr7i4kIuPZ2KD2S3EUIOxnjC8kl2A==,
+      }
+
+  '@floating-ui/react-dom@1.3.0':
+    resolution:
+      {
+        integrity: sha512-htwHm67Ji5E/pROEAr7f8IKFShuiCKHwUC/UY4vC3I5jiSvGFAYnSYiZO5MlGmads+QqvUkR9ANHEguGrDv72g==,
+      }
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/react@0.19.0':
+    resolution:
+      {
+        integrity: sha512-fgYvN4ksCi5OvmPXkyOT8o5a8PSKHMzPHt+9mR6KYWdF16IAjWRLZPAAziI2sznaWT23drRFrYw64wdvYqqaQw==,
+      }
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/utils@0.2.7':
+    resolution:
+      {
+        integrity: sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==,
+      }
 
   '@heroicons/react@2.1.5':
     resolution:
@@ -679,6 +741,51 @@ packages:
       }
     hasBin: true
 
+  '@material-tailwind/react@2.1.9':
+    resolution:
+      {
+        integrity: sha512-3uPlJE9yK4JF9DEQO4I1QbjR8o05+4fysLqoZ0v38TDOLE2tvDRhTBVhn6Mp9vSsq5CoJOKgemG7kbkOFAji4A==,
+      }
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+
+  '@motionone/animation@10.18.0':
+    resolution:
+      {
+        integrity: sha512-9z2p5GFGCm0gBsZbi8rVMOAJCtw1WqBTIPw3ozk06gDvZInBPIsQcHgYogEJ4yuHJ+akuW8g1SEIOpTOvYs8hw==,
+      }
+
+  '@motionone/dom@10.12.0':
+    resolution:
+      {
+        integrity: sha512-UdPTtLMAktHiqV0atOczNYyDd/d8Cf5fFsd1tua03PqTwwCe/6lwhLSQ8a7TbnQ5SN0gm44N1slBfj+ORIhrqw==,
+      }
+
+  '@motionone/easing@10.18.0':
+    resolution:
+      {
+        integrity: sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==,
+      }
+
+  '@motionone/generators@10.18.0':
+    resolution:
+      {
+        integrity: sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==,
+      }
+
+  '@motionone/types@10.17.1':
+    resolution:
+      {
+        integrity: sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==,
+      }
+
+  '@motionone/utils@10.18.0':
+    resolution:
+      {
+        integrity: sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==,
+      }
+
   '@neondatabase/serverless@0.9.4':
     resolution:
       {
@@ -885,6 +992,12 @@ packages:
     resolution:
       {
         integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==,
+      }
+
+  '@types/tinycolor2@1.4.6':
+    resolution:
+      {
+        integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==,
       }
 
   '@typescript-eslint/eslint-plugin@8.0.0':
@@ -1103,6 +1216,13 @@ packages:
         integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==,
       }
 
+  aria-hidden@1.2.4:
+    resolution:
+      {
+        integrity: sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==,
+      }
+    engines: { node: '>=10' }
+
   array-buffer-byte-length@1.0.1:
     resolution:
       {
@@ -1301,6 +1421,12 @@ packages:
         integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==,
       }
     engines: { node: '>=10' }
+
+  classnames@2.3.2:
+    resolution:
+      {
+        integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==,
+      }
 
   classnames@2.5.1:
     resolution:
@@ -1549,6 +1675,13 @@ packages:
       {
         integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==,
       }
+
+  deepmerge@4.2.2:
+    resolution:
+      {
+        integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==,
+      }
+    engines: { node: '>=0.10.0' }
 
   define-data-property@1.1.4:
     resolution:
@@ -2069,6 +2202,21 @@ packages:
       }
     engines: { node: '>=14' }
 
+  framer-motion@6.5.1:
+    resolution:
+      {
+        integrity: sha512-o1BGqqposwi7cgDrtg0dNONhkmPsUFDaLcKXigzuTFC5x58mE8iyTazxSudFzmT6MEyJKfjjU8ItoMe3W+3fiw==,
+      }
+    peerDependencies:
+      react: '>=16.8 || ^17.0.0 || ^18.0.0'
+      react-dom: '>=16.8 || ^17.0.0 || ^18.0.0'
+
+  framesync@6.0.1:
+    resolution:
+      {
+        integrity: sha512-fUY88kXvGiIItgNC7wcTOl0SNRCVXMKSWW2Yzfmn7EKNc+MpCzcz9DhdHcdjbrtN3c6R4H5dTY2jiCpPdysEjA==,
+      }
+
   fs-minipass@2.1.0:
     resolution:
       {
@@ -2321,6 +2469,12 @@ packages:
         integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==,
       }
     engines: { node: '>= 0.4' }
+
+  hey-listen@1.0.8:
+    resolution:
+      {
+        integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==,
+      }
 
   hosted-git-info@2.8.9:
     resolution:
@@ -2923,6 +3077,12 @@ packages:
       }
     engines: { node: '>=8' }
 
+  material-ripple-effects@2.0.1:
+    resolution:
+      {
+        integrity: sha512-hHlUkZAuXbP94lu02VgrPidbZ3hBtgXBtjlwR8APNqOIgDZMV8MCIcsclL8FmGJQHvnORyvoQgC965vPsiyXLQ==,
+      }
+
   mathml-tag-names@2.1.3:
     resolution:
       {
@@ -3489,6 +3649,12 @@ packages:
         integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==,
       }
     engines: { node: '>= 6' }
+
+  popmotion@11.0.3:
+    resolution:
+      {
+        integrity: sha512-Y55FLdj3UxkR7Vl3s7Qr4e9m0onSnP8W7d/xQLsoJM40vs6UKHFdygs6SWryasTZYqugMjm3BepCF4CWXDiHgA==,
+      }
 
   possible-typed-array-names@1.0.0:
     resolution:
@@ -4175,6 +4341,12 @@ packages:
       }
     engines: { node: '>=8' }
 
+  style-value-types@5.0.0:
+    resolution:
+      {
+        integrity: sha512-08yq36Ikn4kx4YU6RD7jWEv27v4V+PUsOGa4n/as8Et3CuODMJQ00ENeAVXAeydX4Z2j1XHZF1K2sX4mGl18fA==,
+      }
+
   styled-jsx@5.1.6:
     resolution:
       {
@@ -4295,12 +4467,24 @@ packages:
       }
     engines: { node: ^14.18.0 || >=16.0.0 }
 
+  tabbable@6.2.0:
+    resolution:
+      {
+        integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==,
+      }
+
   table@6.8.2:
     resolution:
       {
         integrity: sha512-w2sfv80nrAh2VCbqR5AK27wswXhqcck2AhfnNW76beQXskGZ1V12GwS//yYVa3d3fcvAip2OUnbDAjW2k3v9fA==,
       }
     engines: { node: '>=10.0.0' }
+
+  tailwind-merge@1.8.1:
+    resolution:
+      {
+        integrity: sha512-+fflfPxvHFr81hTJpQ3MIwtqgvefHZFUHFiIHpVIRXvG/nX9+gu2P7JNlFu2bfDMJ+uHhi/pUgzaYacMoXv+Ww==,
+      }
 
   tailwindcss@3.4.7:
     resolution:
@@ -4334,6 +4518,12 @@ packages:
     resolution:
       {
         integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==,
+      }
+
+  tinycolor2@1.6.0:
+    resolution:
+      {
+        integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==,
       }
 
   to-fast-properties@2.0.0:
@@ -4832,6 +5022,14 @@ snapshots:
       tslib: 2.6.3
     optional: true
 
+  '@emotion/is-prop-valid@0.8.8':
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    optional: true
+
+  '@emotion/memoize@0.7.4':
+    optional: true
+
   '@eslint-community/eslint-utils@4.4.0(eslint@8.57.0)':
     dependencies:
       eslint: 8.57.0
@@ -4854,6 +5052,31 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.0': {}
+
+  '@floating-ui/core@1.6.7':
+    dependencies:
+      '@floating-ui/utils': 0.2.7
+
+  '@floating-ui/dom@1.6.10':
+    dependencies:
+      '@floating-ui/core': 1.6.7
+      '@floating-ui/utils': 0.2.7
+
+  '@floating-ui/react-dom@1.3.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)':
+    dependencies:
+      '@floating-ui/dom': 1.6.10
+      react: 19.0.0-rc-06d0b89e-20240801
+      react-dom: 19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801)
+
+  '@floating-ui/react@0.19.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)':
+    dependencies:
+      '@floating-ui/react-dom': 1.3.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
+      aria-hidden: 1.2.4
+      react: 19.0.0-rc-06d0b89e-20240801
+      react-dom: 19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801)
+      tabbable: 6.2.0
+
+  '@floating-ui/utils@0.2.7': {}
 
   '@heroicons/react@2.1.5(react@19.0.0-rc-06d0b89e-20240801)':
     dependencies:
@@ -4987,6 +5210,53 @@ snapshots:
       - encoding
       - supports-color
 
+  '@material-tailwind/react@2.1.9(patch_hash=6xxul43h7j3fhec4fpetlaqg6e)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)':
+    dependencies:
+      '@floating-ui/react': 0.19.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
+      classnames: 2.3.2
+      deepmerge: 4.2.2
+      framer-motion: 6.5.1(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
+      material-ripple-effects: 2.0.1
+      prop-types: 15.8.1
+      react: 19.0.0-rc-06d0b89e-20240801
+      react-dom: 19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801)
+      tailwind-merge: 1.8.1
+
+  '@motionone/animation@10.18.0':
+    dependencies:
+      '@motionone/easing': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
+      tslib: 2.6.3
+
+  '@motionone/dom@10.12.0':
+    dependencies:
+      '@motionone/animation': 10.18.0
+      '@motionone/generators': 10.18.0
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
+      hey-listen: 1.0.8
+      tslib: 2.6.3
+
+  '@motionone/easing@10.18.0':
+    dependencies:
+      '@motionone/utils': 10.18.0
+      tslib: 2.6.3
+
+  '@motionone/generators@10.18.0':
+    dependencies:
+      '@motionone/types': 10.17.1
+      '@motionone/utils': 10.18.0
+      tslib: 2.6.3
+
+  '@motionone/types@10.17.1': {}
+
+  '@motionone/utils@10.18.0':
+    dependencies:
+      '@motionone/types': 10.17.1
+      hey-listen: 1.0.8
+      tslib: 2.6.3
+
   '@neondatabase/serverless@0.9.4':
     dependencies:
       '@types/pg': 8.11.6
@@ -5084,6 +5354,8 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
+
+  '@types/tinycolor2@1.4.6': {}
 
   '@typescript-eslint/eslint-plugin@8.0.0(@typescript-eslint/parser@8.0.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)':
     dependencies:
@@ -5239,6 +5511,10 @@ snapshots:
 
   argparse@2.0.1: {}
 
+  aria-hidden@1.2.4:
+    dependencies:
+      tslib: 2.6.3
+
   array-buffer-byte-length@1.0.1:
     dependencies:
       call-bind: 1.0.7
@@ -5386,6 +5662,8 @@ snapshots:
 
   chownr@2.0.0: {}
 
+  classnames@2.3.2: {}
+
   classnames@2.5.1: {}
 
   cli-cursor@5.0.0:
@@ -5515,6 +5793,8 @@ snapshots:
       ms: 2.1.2
 
   deep-is@0.1.4: {}
+
+  deepmerge@4.2.2: {}
 
   define-data-property@1.1.4:
     dependencies:
@@ -5907,6 +6187,23 @@ snapshots:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
 
+  framer-motion@6.5.1(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801):
+    dependencies:
+      '@motionone/dom': 10.12.0
+      framesync: 6.0.1
+      hey-listen: 1.0.8
+      popmotion: 11.0.3
+      react: 19.0.0-rc-06d0b89e-20240801
+      react-dom: 19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801)
+      style-value-types: 5.0.0
+      tslib: 2.6.3
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+
+  framesync@6.0.1:
+    dependencies:
+      tslib: 2.6.3
+
   fs-minipass@2.1.0:
     dependencies:
       minipass: 3.3.6
@@ -6065,6 +6362,8 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  hey-listen@1.0.8: {}
 
   hosted-git-info@2.8.9: {}
 
@@ -6394,6 +6693,8 @@ snapshots:
     dependencies:
       semver: 6.3.1
 
+  material-ripple-effects@2.0.1: {}
+
   mathml-tag-names@2.1.3: {}
 
   mdn-data@2.0.30: {}
@@ -6688,6 +6989,13 @@ snapshots:
   pify@3.0.0: {}
 
   pirates@4.0.6: {}
+
+  popmotion@11.0.3:
+    dependencies:
+      framesync: 6.0.1
+      hey-listen: 1.0.8
+      style-value-types: 5.0.0
+      tslib: 2.6.3
 
   possible-typed-array-names@1.0.0: {}
 
@@ -7108,6 +7416,11 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
+  style-value-types@5.0.0:
+    dependencies:
+      hey-listen: 1.0.8
+      tslib: 2.6.3
+
   styled-jsx@5.1.6(@babel/core@7.25.2)(react@19.0.0-rc-06d0b89e-20240801):
     dependencies:
       client-only: 0.0.1
@@ -7223,6 +7536,8 @@ snapshots:
       '@pkgr/core': 0.1.1
       tslib: 2.6.3
 
+  tabbable@6.2.0: {}
+
   table@6.8.2:
     dependencies:
       ajv: 8.17.1
@@ -7230,6 +7545,8 @@ snapshots:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+
+  tailwind-merge@1.8.1: {}
 
   tailwindcss@3.4.7:
     dependencies:
@@ -7276,6 +7593,8 @@ snapshots:
   thenify@3.3.1:
     dependencies:
       any-promise: 1.3.0
+
+  tinycolor2@1.6.0: {}
 
   to-fast-properties@2.0.0: {}
 

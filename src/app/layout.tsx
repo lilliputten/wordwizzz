@@ -2,36 +2,49 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { SessionProvider } from 'next-auth/react';
-import Script from 'next/script';
+// import Script from 'next/script';
+// import Head from 'next/head'
+
+import { ThemeWrapper } from '@/components/layouts/ThemeWrapper';
+
+// import '@material-tailwind/html/styles/material-tailwind.css';
 
 import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'NextJS Auth App',
-  description: 'Sample application to explore modern authorization approaches',
+  title: 'WordWizzz!',
+  description: 'WordWizzz word learning NextJS application',
 };
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   session: never; // Session | null;
-  children: React.ReactNode;
 }
 
 const RootLayout: React.FC<Props> = (props) => {
   const { children, session } = props;
   return (
     <html lang="en">
+      <body className={inter.className}>
+        <SessionProvider session={session}>
+          <ThemeWrapper>
+            {/* Main content */}
+            {children as React.ReactElement}
+          </ThemeWrapper>
+        </SessionProvider>
+      </body>
+      {/* NOTE: Experiments with low-level html tailwind approach
+      <Script
+        // prettier-ignore
+        type="text/javascript"
+        src="/_next/static/@material-tailwind/html/scripts/ripple.js"
+      />
       <Script
         type="text/javascript"
         src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"
       />
-      <body className={inter.className}>
-        <SessionProvider session={session}>
-          {/* Main content */}
-          {children}
-        </SessionProvider>
-      </body>
+      */}
     </html>
   );
 };
