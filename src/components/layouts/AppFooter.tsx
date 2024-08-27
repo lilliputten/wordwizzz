@@ -44,7 +44,7 @@ export const FooterMenuItem: React.FC<{ item: TMenuItem }> = ({ item }) => {
           'hover:bg-primary-400',
           'hover:bg-opacity-50',
           'px-4',
-          'py-2.5',
+          'py-1.5',
           'rounded-full',
           '[&>svg]:w-[20px]',
           '[&>svg]:h-[20px]',
