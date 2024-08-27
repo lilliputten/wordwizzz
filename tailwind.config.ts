@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss';
 import tinycolor from 'tinycolor2';
-// import { TColor } from 'src/core/types';
-
 import withMT from '@material-tailwind/react/utils/withMT';
+
+import { TColor } from '@/core/types/generic';
 
 const primaryColor = '#b22';
 const orangeColor = '#fb1';
@@ -22,7 +22,7 @@ function getColorSpread(id: string, color: string) {
     [`${id}-800`]: tinycolor(color).lighten(30).toHexString(),
     [`${id}-900`]: tinycolor(color).lighten(40).toHexString(),
     [`${id}-950`]: tinycolor(color).lighten(45).toHexString(),
-  };
+  } as Record<string, TColor>;
 }
 
 // Core app color definitions
@@ -37,7 +37,6 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/ui/**/*.{js,ts,jsx,tsx,mdx}',
-    // './node_modules/flowbite/**/*.js',
   ],
   theme: {
     extend: {
@@ -54,10 +53,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    // @see https://flowbite.com/docs/getting-started/quickstart
-    // flowbite,
-  ],
 };
 
 export default withMT(config);
