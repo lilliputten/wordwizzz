@@ -5,9 +5,11 @@ import classNames from 'classnames';
 
 import { TMenuItem } from '@/core/types/generic/TMenuItem';
 import { TPropsWithClassName } from '@/core/types/generic';
+import { versionHash } from '@/core/constants/build';
 
 import { MaxWidthWrapper } from './MaxWidthWrapper';
 
+// TODO: Extract to constants...
 const menuItems: TMenuItem[] = [
   {
     id: 'aboutUs',
@@ -66,6 +68,7 @@ export const AppFooter: React.FC<TProps> = (props) => {
       className={classNames(
         // prettier-ignore
         className,
+        '--AppFooter--',
         'AppFooter',
         'bg-primary',
         'color-white',
@@ -73,7 +76,7 @@ export const AppFooter: React.FC<TProps> = (props) => {
     >
       <footer
         className={classNames(
-          'AppFooter_Container',
+          '--AppFooter_Container--',
           'flex',
           'w-full',
           'flex-row',
@@ -90,7 +93,14 @@ export const AppFooter: React.FC<TProps> = (props) => {
       >
         <Link
           href="/"
-          className={classNames('flex', 'gap-4', 'hover:opacity-80', 'transition-opacity')}
+          className={classNames(
+            // prettier-ignore
+            '--AppFooter_Logo--',
+            'flex',
+            'gap-4',
+            'hover:opacity-80',
+            'transition-opacity',
+          )}
         >
           <Image
             src="/static/images/logo/v1/sm-super-simple.svg"
@@ -100,9 +110,18 @@ export const AppFooter: React.FC<TProps> = (props) => {
           />
           <Typography className={classNames('font-normal')}>&copy; 2024 WordQizzz!</Typography>
         </Link>
+        <div
+          className={classNames(
+            // prettier-ignore
+            '--AppFooter_Version--',
+          )}
+        >
+          {versionHash}
+        </div>
         <ul
           className={classNames(
             // prettier-ignore
+            '--AppFooter_Menu--',
             'flex',
             'flex-wrap',
             'items-center',

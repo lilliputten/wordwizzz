@@ -5,6 +5,7 @@ import { KeyIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
 import { Typography } from '@/components/ui/shared';
 import { TMenuItem } from '@/core/types/generic/TMenuItem';
 
+// TODO: Extract to constants...
 const menuItems: TMenuItem[] = [
   {
     id: 'pages',

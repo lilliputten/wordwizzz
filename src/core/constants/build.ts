@@ -1,6 +1,6 @@
 import { TAppInfo } from '@/core/types/app/TAppInfo';
 
-import appInfoRaw from '@/app-info.json';
+import appInfoRaw from '../../../public/app-info.json';
 
 export const appInfo: TAppInfo = appInfoRaw;
 
